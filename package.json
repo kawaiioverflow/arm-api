@@ -1,0 +1,13 @@
+{
+  "name": "arm",
+  "version": "1.0.0",
+  "description": "AnimeID Relational Mapper",
+  "license": "MIT",
+  "author": "P-Chan <hello@0x50.io>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p-chan/arm.git"
+  },
+  "private": true
+}
