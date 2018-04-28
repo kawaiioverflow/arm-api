@@ -19,8 +19,10 @@
     "chromy": "^0.5.11",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
+    "koa-hbs": "^1.0.0",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
+    "mustache": "^2.3.0",
     "node-fetch": "^2.1.2",
     "require-directory": "^2.1.1"
   },
