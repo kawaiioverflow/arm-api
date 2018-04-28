@@ -7,8 +7,6 @@ const router = require('./routes')
 
 const app = new Koa()
 
-console.log(path.resolve(__dirname, '../app/Views'))
-
 app.use(
   hbs.middleware({
     viewPath: path.resolve(__dirname, '../app/Views')
