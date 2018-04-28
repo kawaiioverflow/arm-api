@@ -16,6 +16,7 @@ module.exports = {
         }
       })
       .catch((err) => {
+        ctx.status = 404
         ctx.body = {
           status: 404,
           message: err.message
