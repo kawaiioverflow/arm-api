@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node ./start/app.js",
-    "dev": "nodemon ./start/app.js",
+    "dev": "nodemon -e js,hbs ./start/app.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },

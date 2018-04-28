@@ -4,8 +4,84 @@
   <meta charset="utf-8">
   <title>ARM | Anime Relational Mapper</title>
   <meta name="description" content="Anime Relational Mapper">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-  hello world
+  <div id="app" class="app">
+    <div class="search">
+      <select v-model="searchType">
+        <option>mal</option>
+        <option>kitsu</option>
+        <option>anilist</option>
+      </select>
+      <input type="number" v-model.number="searchId" value="" placeholder="Input AnimeID">
+      <input type="submit" v-on:click="search" name="" value="Search">
+    </div>
+    <div class="results">
+      <ul>
+        <li>mal: 😇 result.mal 😇</li>
+        <li>kitsu: 😇 result.kitsu 😇</li>
+        <li>anilist: 😇 result.anilist 😇</li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    .app__item--mal {
+      background-color: #2e51a2;
+    }
+
+    .app__item--kitsu {
+      background-color: #402F3F;
+    }
+
+    .app__item--anilist {
+      background-color: #2fb8ff;
+    }
+
+  </style>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        searchType: 'mal',
+        searchId: 0,
+        result: {
+          mal: null,
+          kitsu: null,
+          anilist: null
+        }
+      },
+      methods: {
+        search: function () {
+          axios.get(`/api/v1/search?type=${this.searchType}&id=${this.searchId}`)
+            .then((res) => {
+              this.result.mal = res.data.services.mal
+              this.result.kitsu = res.data.services.kitsu
+              this.result.anilist = res.data.services.anilist
+            })
+            .catch((error) => {
+              console.log(error)
+            })
+        }
+      },
+      delimiters: [
+        "😇",
+        "😇"
+      ]
+    })
+  </script>
 </body>
 </html>
