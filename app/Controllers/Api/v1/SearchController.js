@@ -9,8 +9,17 @@ module.exports = {
       console.error('Not Found')
     }
 
-    ctx.body = {
-      services: await notify(type, id)
-    }
+    await notify(type, id)
+      .then((results) => {
+        ctx.body = {
+          services: results
+        }
+      })
+      .catch((err) => {
+        ctx.body = {
+          status: 404,
+          message: err.message
+        }
+      })
   }
 }

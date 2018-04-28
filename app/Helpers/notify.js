@@ -5,7 +5,9 @@ module.exports = async (type, id) => {
 
   const notifyURL = await fetch(`https://notify.moe/${type}/anime/${id}`)
   const status = await notifyURL.status
-  const headers = await notifyURL.headers
+
+  if (status !== 200) throw new Error('Not Found')
+
   const url = await notifyURL.url
   const notifyID = url.split('/').pop()
   const notifyAPI = await fetch(`https://notify.moe/api/anime/${notifyID}`)
