@@ -2,18 +2,19 @@
 
 > AnimeID Relational Mapper
 
-ARM は、世界最大級のアニメデータベースサービスである MyAnimeList と Kitsu と AniList の AnimeID を紐付けるサービスです。
-ウェブサイトだけでなく JSON API も提供しているため、それぞれのアニメデータベースサービスの強みを活かしたサービスをつくるときに役立ちます。
+ARM is a web service linking AnimeID of MyAnimeList and Kitsu and AniList.
+This is not only a website. It also provides a JSON API.
+It is useful for creating services that make full use of the strengths of each anime database service.
 
 ![demo](./resources/demo.gif)
 
-## サポートしているサービスたち
+## Support services
 
 - MyAnimeList
 - Kitsu
 - AniList
 
-## インストール
+## Install
 
 ```
 $ git clone https://github.com/p-chan/arm.git
@@ -22,21 +23,17 @@ $ npm install
 $ npm start
 ```
 
-## 開発者向けドキュメント
+## Documents
 
-ARM は、開発者向けに JSON API を提供しています。
+ARM provides JSON API for developers.
 
-### エンドポイント
-
-以下のエンドポイントに GET でリクエストします。
+### Endpoints
 
 ```
-https://arm.now.sh/api/v1/search
+[GET] https://arm.now.sh/api/v1/search
 ```
 
-### パラメーター
-
-パラメーターは、以下の2つを指定します。
+### Parameters
 
 | Parameter | Value | Required |
 |:---|:---|:---|
@@ -44,10 +41,30 @@ https://arm.now.sh/api/v1/search
 | id | number | `true` |
 
 
-## 著者
+### Example
+
+#### Request
+
+```
+[GET] https://arm.now.sh/api/v1/search?type=mal&id=35849
+```
+
+#### Response
+
+```
+{
+  "services": {
+    "mal":"35849",
+    "anilist":"99423",
+    "kitsu":"13600"
+  }
+}
+```
+
+## Author
 
 [@p-chan](https://github.com/p-chan)
 
-## ライセンス
+## License
 
 [MIT](LICENSE)
