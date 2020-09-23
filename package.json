@@ -1,40 +1,12 @@
 {
-  "name": "arm",
+  "name": "arm-api",
   "version": "1.0.0",
-  "description": "AnimeID Relational Mapper",
+  "description": "An API to relational mapping Anime ID's between MAL, Annict, AniList and Syobocal",
   "license": "MIT",
-  "author": "P-Chan <hello@0x50.io>",
-  "main": "index.js",
+  "author": "P-Chan",
   "repository": {
     "type": "git",
     "url": "https://github.com/p-chan/arm.git"
-  },
-  "scripts": {
-    "start": "node ./start/app.js",
-    "dev": "nodemon -e js,hbs ./start/app.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
-  },
-  "dependencies": {
-    "koa": "^2.5.1",
-    "koa-bodyparser": "^4.2.0",
-    "koa-hbs": "^1.0.0",
-    "koa-logger": "^3.2.0",
-    "koa-router": "^7.4.0",
-    "koa-static": "^4.0.2",
-    "node-fetch": "^2.1.2"
-  },
-  "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "nodemon": "^1.17.3",
-    "prettier": "^1.12.1"
   },
   "private": true
 }
