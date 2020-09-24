@@ -1,65 +1,27 @@
-# ARM
+# arm-api
 
-> AnimeID Relational Mapper
+> An API to relational mapping Anime ID's between MAL, Annict, AniList and Syobocal
 
-ARM is a web service linking AnimeID of MyAnimeList and Kitsu and AniList.
-This is not only a website. It also provides a JSON API.
-It is useful for creating services that make full use of the strengths of each anime database service.
+## Usage
 
-![demo](./resources/demo.gif)
-
-## Support services
-
-- MyAnimeList
-- Kitsu
-- AniList
-
-## Install
+### Request
 
 ```
-$ git clone https://github.com/p-chan/arm.git
-$ cd arm
-$ npm install
-$ npm start
+[GET] https://arm.kawaiioverflow.com/api/ids?service=[mal|annict|anilist|syobocal]&id=[number]
 ```
 
-## Documents
+### Response
 
-ARM provides JSON API for developers.
-
-### Endpoints
-
-```
-[GET] https://arm.now.sh/api/v1/search
-```
-
-### Parameters
-
-| Parameter | Value | Required |
-|:---|:---|:---|
-| type | `mal` or `kitsu` or `anilist` | `true` |
-| id | number | `true` |
-
-
-### Example
-
-#### Request
-
-```
-[GET] https://arm.now.sh/api/v1/search?type=mal&id=35849
-```
-
-#### Response
-
-```
+```json
 {
-  "services": {
-    "mal":"35849",
-    "anilist":"99423",
-    "kitsu":"13600"
-  }
+  "mal_id": number,
+  "annict_id": number,
+  "syobocal_tid": number,
+  "anilist_id": number
 }
 ```
+
+Notice: All properties are nullable.
 
 ## Author
 
