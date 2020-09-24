@@ -8,5 +8,8 @@
     "type": "git",
     "url": "https://github.com/p-chan/arm.git"
   },
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  },
   "private": true
 }
