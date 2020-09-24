@@ -4,14 +4,21 @@
   "description": "An API to relational mapping Anime ID's between MAL, Annict, AniList and Syobocal",
   "license": "MIT",
   "author": "P-Chan",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/p-chan/arm.git"
   },
   "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
     "format": "prettier --write ."
   },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
+    "nodemon": "^2.0.4",
     "prettier": "^2.1.2"
   },
   "private": true
