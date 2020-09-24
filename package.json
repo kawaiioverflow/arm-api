@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/p-chan/arm.git"
   },
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "devDependencies": {
     "prettier": "^2.1.2"
   },
