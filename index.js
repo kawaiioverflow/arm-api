@@ -53,4 +53,4 @@ app.use((err, req, res, next) => {
     : res.status(500).json(Boom.internal().output.payload)
 })
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
