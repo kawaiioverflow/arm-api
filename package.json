@@ -20,7 +20,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.5",
+    "nodemon": "^2.0.6",
     "prettier": "^2.1.2"
   },
   "private": true
