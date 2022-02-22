@@ -5,6 +5,24 @@ const { arm } = require('@kawaiioverflow/arm')
 const app = express()
 
 /**
+ * Return ARM or Filter by Service (return array)
+ */
+app.get('/api/arm', async (req, res, next) => {
+  try {
+    const { service } = req.query
+    if ( service ) {
+      if (service !== 'mal' && service !== 'annict' && service !== 'anilist' && service !== 'syobocal') {
+        return next(Boom.badRequest('service can be mal, annict, anilist or syobocal'))
+      }
+      return res.json(arm.map((anime) => anime.anilist_id))
+    }
+    return res.json(arm)
+  } catch (error) {
+    return next(Boom.internal())
+  }
+})
+
+/**
  * Endpoint
  */
 app.get('/api/ids', async (req, res, next) => {
