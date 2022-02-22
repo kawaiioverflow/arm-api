@@ -1,6 +1,6 @@
 const Boom = require('@hapi/boom')
 const express = require('express')
-const database = require('@kawaiioverflow/arm')
+const { arm } = require('@kawaiioverflow/arm')
 
 const app = express()
 
@@ -23,7 +23,7 @@ app.get('/api/ids', async (req, res, next) => {
       return next(Boom.badRequest('id must be a number'))
     }
 
-    const anime = database.find((anime) => {
+    const anime = arm.find((anime) => {
       return anime[`${service}_id`] == Number(id)
     })
 
