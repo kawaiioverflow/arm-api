@@ -42,7 +42,7 @@ app.get('/api/ids', async (req, res, next) => {
     }
 
     const anime = arm.find((anime) => {
-      return anime[`${service}_id`] == Number(id)
+      return anime[`${service}_id`] == Number(id) || anime[`${service}_tid`] == Number(id)
     })
 
     if (anime == undefined) {
