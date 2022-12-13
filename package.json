@@ -17,7 +17,7 @@
   "dependencies": {
     "@hapi/boom": "^9.1.2",
     "@kawaiioverflow/arm": "^0.77.0",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.7",
