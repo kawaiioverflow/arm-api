@@ -15,7 +15,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@hapi/boom": "^9.1.2",
+    "@hapi/boom": "^10.0.1",
     "@kawaiioverflow/arm": "^0.77.0",
     "express": "^4.17.1"
   },
